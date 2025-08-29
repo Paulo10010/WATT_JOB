@@ -1,0 +1,191 @@
+/* src/components/OperationModal/OperationModal.module.css */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:#282F3F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  background-color: #282F3F; /* Azul escuro do fundo */
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1400px; /* Largura máxima do modal */
+  height: 80%;
+  max-height: 700px; /* Altura máxima do modal */
+  position: relative;
+  font-family: 'Roboto',Arial, sans-serif;
+  border: 2px solid #FFF;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 90px;
+  border-radius: 50%;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 4.5rem;
+  font-weight: 200;
+  cursor: pointer;
+  line-height: 1;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.closeButton:hover {
+  color: red;
+  transform: translateY(-5px);
+  
+}
+.modalTitle {
+  border: 2px solid #FFF;
+  color: white;
+  padding: 0.3rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 auto 2rem auto;
+  max-width: 600px;
+}
+
+.optionsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+/* Estilos do OptionCard */
+.optionCard {
+  background-color: white;
+  border-radius: 20px;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.optionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cardHeader {
+  background-color: #F9A826; /* Laranja do protótipo */
+  color: #282F3F;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.cardBody {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImage {
+  max-width: 100%;
+  height: 410px;
+}
+
+
+/* ESTILOS DO POPUP INTERNO */
+
+.popupBody {
+  display: flex;
+  align-items: center; /* Alinha as colunas verticalmente */
+  gap: 2rem; /* Espaço entre a imagem e o texto */
+  padding: 1.5rem 0; /* Espaçamento vertical */
+  margin-bottom: 1rem;
+}
+
+/* COLUNA DA IMAGEM (ESQUERDA) */
+.popupImageContainer {
+  flex: 0 0 300px; /* Não cresce, não encolhe, base de 300px */
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupImageContainer img {
+  width: 100%;
+  max-width: 900px; /* Ajuste o tamanho da imagem se necessário */
+}
+
+/* COLUNA DO TEXTO (DIREITA) */
+.popupTextContainer {
+  flex: 1; /* Ocupa o espaço restante */  
+  display: flex;
+  height: 16rem;
+  color: #fff;
+}
+
+.popupTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0; /* Removemos o padding antigo */
+  border-radius: 0; /* Removemos a borda antiga */
+  display: block; /* Ocupa a linha toda */
+  margin-bottom: 2.5rem;
+  color: #282F3F; 
+}
+
+.popupSubtitle {
+  font-size: 1.2rem;
+  font-weight: 00;
+  color: #282F3F;
+}
+/* RODAPÉ E BOTÃO */
+.popupFooter {
+  display: flex;
+  justify-content: flex-end; /* Alinha o botão à direita */
+}
+
+.primaryButton {
+  background-color: #F9A826; /* Laranja do protótipo */
+  color: #282F3F;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: #94631b;
+}
+.textBlock {
+  background-color: #fff;
+  border-radius: 16px; /* Mesma borda da imagem */
+  padding: 2%;
+  width: 80%; /* Aumenta a largura da caixa */
+  height: 100%; 
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+

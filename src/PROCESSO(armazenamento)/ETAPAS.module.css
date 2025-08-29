@@ -1,0 +1,215 @@
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:#282F3F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modalContent {
+  background-color: #282F3F; /* Azul escuro do fundo */
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1400px; /* Largura máxima do modal */
+  height: 80%;
+  max-height: 700px; /* Altura máxima do modal */
+  position: relative;
+  font-family: 'Roboto',Arial, sans-serif;
+  border: 2px solid #FFF;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 90px;
+  border-radius: 50%;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 4.5rem;
+  font-weight: 200;
+  cursor: pointer;
+  line-height: 1;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.closeButton:hover {
+  color: red;
+  transform: translateY(-5px);
+  
+}
+.modalTitle {
+  border: 2px solid #FFF;
+  color: white;
+  padding: 0.3rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 auto 2rem auto;
+  max-width: 600px;
+}
+
+.optionsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+/* Estilos do OptionCard */
+.optionCard {
+  background-color: white;
+  border-radius: 20px;
+  width: 500px;
+  height: 430px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.optionCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.cardBody {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardImage {
+  max-width: 100%;
+  height: 410px;
+}
+.optionCard.selected {
+  border: 6px solid #FFF; /* Borda laranja para destacar */
+  transform: scale(1.03); /* Leve aumento para dar feedback */
+}
+
+/* 2. ESTILOS DA BARRA DE PROGRESSO */
+.progressBar {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 12px;
+    background-color: #3a455a; /* Fundo da barra */
+    border-radius: 4px;
+    margin: 0; /* Remove margens para posicionamento absoluto */
+    overflow: hidden;
+    z-index: 1;
+}
+
+.progress {
+    height: 100%;
+    background-color: #F9A826; /* Cor do preenchimento */
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* 3. ESTILOS DO NOVO BOTÃO 'SEGUINTE' */
+.nextButton {
+    background-color: #F9A826; /* Cor cinza claro do protótipo */
+    color: #282F3F; /* Texto escuro */
+    border: none;
+    padding: 0.6rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.nextButton:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilo para quando o botão estiver desabilitado */
+.nextButton:disabled {
+  background-color: #5a667e;
+  color: #9ab;
+  cursor: not-allowed;
+}
+
+/* 4. AJUSTE NO HEADER PADRÃO DO CARTÃO */
+/* Adicione a cor laranja aqui para ser o padrão */
+.cardHeader {
+  background-color: #F9A826;
+  color: #282F3F;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.8rem 0;
+}
+/* PARTE DE SELECIONAR O TAMANHO DA FIBRA DO FIBERSIZER */
+
+/* Caixa interna otimizada para autoscale responsivo */
+.stepContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2vw;
+  width: calc(100% - 4vw);
+  max-width: 900px;
+  min-width: 280px;
+  background: #FFF;
+  border-radius: 29.138px;
+  padding: 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 16px rgba(40,47,63,0.08);
+}
+
+/* Input responsivo e escalável */
+.stepContent input {
+  width: 100%;
+  min-width: 120px;
+  max-width: 100%;
+  height: auto;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-align: center;
+  color: #333;
+}
+
+.inputBox::-webkit-inner-spin-button,
+.inputBox::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputBox {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
