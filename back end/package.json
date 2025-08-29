@@ -1,0 +1,32 @@
+{
+  "name": "watt_job",
+  "version": "1.0.0",
+  "description": "Criando um site para o protótipo criado no figma.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paulo10010/WATT_JOB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paulo10010/WATT_JOB/issues"
+  },
+  "homepage": "https://github.com/Paulo10010/WATT_JOB#readme",
+  "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "@prisma/extension-accelerate": "^2.0.2",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "prisma": "^6.15.0"
+  }
+}
