@@ -1,0 +1,200 @@
+
+html {
+  font-size: 16px; /* Base para o cálculo de 'rem' */
+}
+
+.cardimage {
+    position: absolute; 
+    top: 2vw;       
+    left: 2vw;     
+    z-index: 1000; 
+    width: 10vw;   /* Largura relativa à largura da tela */
+    max-width: 150px; /* Impede que a imagem fique muito grande */
+    height: auto;
+    border-radius: 50%;
+}
+
+.loginContainer {
+    position: absolute;
+    height: 100vh; 
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    background: #282F3F; 
+    padding: 1rem; /* Adiciona um respiro em telas menores */
+    box-sizing: border-box;
+}
+
+.welcome {
+    font-family: 'Roboto', arial;
+    /* font-size: 51.316px; */
+    /* Usa clamp() para um tamanho de fonte fluido com limites mínimo e máximo */
+    font-size: clamp(2rem, 5vw, 3.2rem); 
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #FFFFFF;
+    margin-bottom: 2.5rem; /* 40px -> 2.5rem */
+    text-align: center; /* Garante a centralização em telas menores */
+}
+
+.loginBox {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    border: 0.31rem solid #FFFFFF; /* 5px -> 0.31rem */
+    width: 90%; /* Largura relativa ao container pai */
+    max-width: 949px; /* Mantém o limite máximo do design original */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    min-height: 700px; /* Altura mínima para manter a proporção */
+    padding: 2rem; /* Espaçamento interno responsivo */
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 1.75rem; /* 28px -> 1.75rem */
+    background: #282F3F;
+    /* Sombra com valores em rem para escalar com o resto */
+    box-shadow: 1.33rem 1.33rem 0.35rem 0 rgba(0, 0, 0, 0.46); /* 21.381px -> 1.33rem, 5.702px -> 0.35rem */
+    color: #EEE;
+    font-family: 'Roboto', arial;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centraliza os inputs dentro do form */
+    gap: 1rem; /* 15px -> ~1rem */
+    width: 100%;
+}
+
+.GroupInput {
+    width: 100%; /* Ocupa toda a largura do .loginForm */
+    max-width: 675px; /* Limite máximo do design original */
+    height: 5.7rem; /* 91px -> 5.7rem */
+    padding: 0 1.5rem; /* Espaçamento interno para o texto */
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-radius: 1.75rem; /* 28px -> 1.75rem */
+    border: 0.25rem solid #ffffff; /* 4px -> 0.25rem */
+    background: #282F3F;
+    align-items: center; 
+    font-family: 'Roboto', arial;
+    /* font-size: 35.636px; */
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #fff;
+}
+
+.GroupInput::placeholder {
+    color: #fff; 
+    opacity: 1;
+}
+
+.loginBtn {
+    width: 100%;
+    max-width: 675px; /* Limite máximo do design original */
+    height: 5.7rem; /* 91px -> 5.7rem */
+    flex-shrink: 0;
+    border-radius: 1.75rem; /* 28px -> 1.75rem */
+    border: none;
+    background: rgba(250, 155, 37, 0.91);
+    box-shadow: 0 0.71rem 0 0 rgba(0, 0, 0, 0.25); /* 11.403px -> 0.71rem */
+    font-family: 'Roboto', arial;
+    /* font-size: 35.636px; */
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    color: #171717;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.loginBtn:active {
+    background: rgba(164, 88, 1, 0.91); 
+    box-shadow: 0 0.46rem 0 0 rgba(0, 0, 0, 0.25); /* 7.403px -> 0.46rem */
+}
+
+.caixaRecuSenha {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 110%;
+    max-width: 340px; /* Limite máximo do design original */
+    height: 4rem; /* 64px -> 4rem */
+    margin-top: 1rem; /* Adiciona um espaço acima */
+    flex-shrink: 0;
+    border-radius: 1.375rem; /* 22px -> 1.375rem */
+    background: #4B7AB4;
+    box-shadow: 0 0.71rem 0 0 rgba(0, 0, 0, 0.25); /* 11.4px -> 0.71rem */
+    color: #FFF;
+    font-family: 'Roboto', arial;
+    /* font-size: 29.428px; */
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    transition: background-color 0.1s ease, transform 0.1s ease;
+}
+
+.caixaRecuSenha:active {
+    background: #123b93e8; 
+    box-shadow: 0 0.46rem 0 0 rgba(0, 0, 0, 0.25); /* 7.403px -> 0.46rem */
+}
+
+/* POPUP FEITO PELO GEMINI - Valores já eram majoritariamente responsivos ou foram ajustados */
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.popupContent {
+    background-color: #fff;
+    padding: 1.875rem; /* 30px -> 1.875rem */
+    border-radius: 0.625rem; /* 10px -> 0.625rem */
+    text-align: center;
+    box-shadow: 0 0.31rem 0.94rem rgba(0, 0, 0, 0.3); /* 5px -> 0.31rem, 15px -> 0.94rem */
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.popupContent p {
+    margin-bottom: 1.25rem; /* 20px -> 1.25rem */
+    color: #333;
+    font-size: 1rem; /* Tamanho padrão, se ajusta bem */
+}
+
+.popupContent button {
+    padding: 0.625rem 1.25rem; /* 10px 20px -> 0.625rem 1.25rem */
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 0.31rem; /* 5px -> 0.31rem */
+    cursor: pointer;
+    font-size: 1rem; /* 16px -> 1rem */
+}
+
+/* Animação para o popup */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
