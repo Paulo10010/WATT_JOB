@@ -1,37 +1,62 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-//  output   = "../generated/prisma"
-}
-
+// Define o provedor do banco de dados e a URL de conexão
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
+// Define o gerador do Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Enum para os papéis (funções) dos usuários
 enum Role {
   OPERATOR
   SUPERVISOR
 }
 
-model User {
-  id        String      @id @default(cuid())
-  //cpf unico
-  cpf       String   @unique
-  //nome
-  name      String
-  //cargo
-  role      Role     @default(OPERATOR)
-  //senha
-  password  String
+// Enum para os status do processo de fabricação
+enum ProcessStatus {
+  STARTED
+  IN_PROGRESS
+  FINISHED
+  CANCELED
 }
-//para gerar o client do prisma, rode o comando: npx prisma generate
-//para criar a migration e o banco de dados, rode o comando: npx prisma migrate dev --name init
-//para abrir o studio do prisma, rode o comando: npx prisma studio
 
-//usa em index.ts
+// --- MODELO 'User' ---
+model User {
+  id        String   @id @default(cuid())
+  cpf       String   @unique
+  name      String
+  password  String
+  role      Role     @default(OPERATOR)
+  
+  @@map("users")
+}
+
+enum Warehouse {
+  A
+  B
+}
+
+enum CoilDiameter {
+  cm20
+  cm40
+} 
+
+// --- MODELO PARA O PROCESSO DE FABRICAÇÃO (INDEPENDENTE) ---
+model ManufacturingProcess {
+  id              String        @id @default(cuid())
+  
+  // Dados do processo
+  warehouse       Warehouse        // Armazem 'A' ou 'B'
+  coilDiameter    CoilDiameter          // Diâmetro da bobina '20' ou '40'
+  totalWireLength Int          // Comprimento total do fio. 
+  // Controle de status e tempo
+  status          ProcessStatus @default(STARTED)
+  startTime       DateTime      @default(now())   // Hora de início, preenchida automaticamente
+  endTime         DateTime?     // Hora de finalização, opcional
+
+  @@map("manufacturing_processes")
+}
+

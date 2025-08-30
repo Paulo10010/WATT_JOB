@@ -8,7 +8,7 @@ const router = express.Router();
 // Isso garante que a verificação do token acontece antes de executar o código da rota.
 router.get('/options', authenticateToken, (req, res) => {
   // Se o código chegou até aqui, o token é válido.
-  // O middleware já nos deu as informações do usuário em `req.user`.
+  // O middleware já nos deu as informações do usuário em `req.user`
   const userRole = req.user.role;
 
   let availableOptions = [];
