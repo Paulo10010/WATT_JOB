@@ -61,7 +61,14 @@ function Login() {
                 placeholder="CPF"
                 className={style.GroupInput}
                 value={cpf}
-                onChange={(e) => setCpf(e.target.value)}
+                onChange={(e) => {
+                  // Only allow numbers and max 11 digits
+                  const onlyNums = e.target.value.replace(/\D/g, '').slice(0, 11);
+                  setCpf(onlyNums);
+                }}
+                inputMode="numeric"
+                pattern="[0-9]{11}"
+                maxLength={11}
               />
             </div>
             <div className={style.inputGroup}>

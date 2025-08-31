@@ -45,7 +45,7 @@ function ETAPAS02() {
           <header className={styles.modalHeader}>
             <img src={Logo} alt="Logo da Empresa" className={styles.logo} />
             <div className={styles.modalTitle}>
-              Qual armazém de destino?
+              Qual fibra uniaxial será utilizada?
             </div>
             <button className={styles.closeButton} onClick={handleClose}>
               &times;
