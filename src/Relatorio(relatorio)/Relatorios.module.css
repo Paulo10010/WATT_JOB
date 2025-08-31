@@ -1,0 +1,116 @@
+/* src/pages/Relatorios.module.css */
+
+.reportsContainer {
+  padding: 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #f0f2f5;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.filterInput {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #5a667e;
+  background-color: #282F3F;
+  color: white;
+  font-size: 1rem;
+}
+
+.filterButton, .exportButton {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filterButton {
+  background-color: #4B7AB4;
+  color: white;
+}
+
+.exportButton {
+  background-color: #1e8449;
+  color: white;
+  margin-left: auto; /* Empurra o botão de exportar para a direita */
+}
+
+.tableContainer {
+  background-color: #282F3F;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  overflow: hidden; /* Garante que a tabela não ultrapasse as bordas arredondadas */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Remove o espaço entre as células */
+}
+
+.table th, .table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.table thead {
+  background-color: #1e2532;
+  color: #ccc;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #3a455a;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.concluido {
+  background-color: #1e8449; /* Verde */
+  color: white;
+}
+
+.emandamento {
+  background-color: #f39c12; /* Amarelo */
+  color: #333;
+}
+
+.pendente {
+  background-color: #c0392b; /* Vermelho */
+  color: white;
+}
+
+.actionButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4B7AB4;
+  color: #4B7AB4;
+  background-color: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: #4B7AB4;
+  color: white;
+}

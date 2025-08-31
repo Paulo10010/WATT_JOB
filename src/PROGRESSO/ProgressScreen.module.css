@@ -144,9 +144,8 @@
 }
 
 .popupMessageConclusion{
-    
-  text-align: center;
-   
+    text-align: center;
+    font-size: 1.5rem;
 }
 .popupContent p {
   margin: 3rem 0 2rem 0; /* Add top margin to avoid overlap with header */

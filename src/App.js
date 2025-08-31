@@ -7,7 +7,7 @@ import ETAPAS02 from './PROCESSO(fibra)/ETAPAS02';
 import ETAPAS03 from './PROCESSO(tamanho)/ETAPA03';
 import ConfirmationModal from './Confirmação/Confirmar';
 import ProgressScreen from './PROGRESSO/ProgressScreen';
-
+import MainLayout from './Relatorio(HOME)/MainLayout';
 function App() {
   const [currentScreen, setCurrentScreen] = useState('login');
 
@@ -15,7 +15,8 @@ function App() {
   
 
   return (
-    <Login />
+    <MainLayout>
+    </MainLayout>
   );
 }
 
