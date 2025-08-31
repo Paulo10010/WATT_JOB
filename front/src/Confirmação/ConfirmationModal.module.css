@@ -1,0 +1,138 @@
+/* ConfirmationModal.module.css */
+
+/* --- ESTRUTURA GERAL (REUTILIZADA) --- */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282f3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(5px);
+ 
+}
+
+.modalContent {
+  background-color: #282F3F; /* Azul escuro do fundo */
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 1400px; /* Largura máxima do modal */
+  height: 80%;
+  max-height: 700px; /* Altura máxima do modal */
+  position: relative;
+  font-family: 'Roboto',Arial, sans-serif;
+  border: 2px solid #FFF;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.logo {
+  height: 90px;
+  border-radius: 50%;
+}
+
+.modalTitle {
+  border: 1px solid white;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 auto; /* Centraliza o título */
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: #FFF;
+  font-size: 4.5rem;
+  font-weight: 200;
+  cursor: pointer;
+  line-height: 1;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.closeButton:hover {
+  color: red;
+  transform: translateY(-5px);
+  
+}
+/* --- CONTEÚDO DA CONFIRMAÇÃO (NOVOS ESTILOS) --- */
+.confirmationBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaço entre as seções "Armazém" e "Fibras" */
+}
+
+.dataGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.subLabel {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.dataBox {
+  background-color: #fff;
+  color: #333;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subGroup {
+  display: flex;
+  gap: 1rem; /* Espaço entre "Diâmetro" e "Tamanho" */
+}
+
+.subData {
+  flex: 1; /* Faz com que ambos ocupem o mesmo espaço */
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.confirmButton {
+  background-color: #F9A826; /* Laranja */
+  color: #282F3F;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.confirmButton:hover {
+  background-color: #fdb84d;
+}

@@ -34,7 +34,7 @@
 }
 
 .logo {
-  height: 80px;
+  height: 90px;
   border-radius: 50%;
 }
 
@@ -42,7 +42,7 @@
   background: none;
   border: none;
   color: #FFF;
-  font-size: 3.6rem;
+  font-size: 4.5rem;
   font-weight: 200;
   cursor: pointer;
   line-height: 1;
@@ -108,3 +108,84 @@
   max-width: 100%;
   height: 410px;
 }
+
+
+/* ESTILOS DO POPUP INTERNO */
+
+.popupBody {
+  display: flex;
+  align-items: center; /* Alinha as colunas verticalmente */
+  gap: 2rem; /* Espaço entre a imagem e o texto */
+  padding: 1.5rem 0; /* Espaçamento vertical */
+  margin-bottom: 1rem;
+}
+
+/* COLUNA DA IMAGEM (ESQUERDA) */
+.popupImageContainer {
+  flex: 0 0 300px; /* Não cresce, não encolhe, base de 300px */
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupImageContainer img {
+  width: 100%;
+  max-width: 900px; /* Ajuste o tamanho da imagem se necessário */
+}
+
+/* COLUNA DO TEXTO (DIREITA) */
+.popupTextContainer {
+  flex: 1; /* Ocupa o espaço restante */  
+  display: flex;
+  height: 16rem;
+  color: #fff;
+}
+
+.popupTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 0; /* Removemos o padding antigo */
+  border-radius: 0; /* Removemos a borda antiga */
+  display: block; /* Ocupa a linha toda */
+  margin-bottom: 2.5rem;
+  color: #282F3F; 
+}
+
+.popupSubtitle {
+  font-size: 1.2rem;
+  font-weight: 00;
+  color: #282F3F;
+}
+/* RODAPÉ E BOTÃO */
+.popupFooter {
+  display: flex;
+  justify-content: flex-end; /* Alinha o botão à direita */
+}
+
+.primaryButton {
+  background-color: #F9A826; /* Laranja do protótipo */
+  color: #282F3F;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: #94631b;
+}
+.textBlock {
+  background-color: #fff;
+  border-radius: 16px; /* Mesma borda da imagem */
+  padding: 2%;
+  width: 80%; /* Aumenta a largura da caixa */
+  height: 100%; 
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
