@@ -23,7 +23,7 @@ enum ProcessStatus {
   CANCELED
 }
 
-// --- MODELO 'User' ---
+//  MODELO 'User' 
 model User {
   id        String   @id @default(cuid())
   cpf       String   @unique
@@ -34,28 +34,18 @@ model User {
   @@map("users")
 }
 
-enum Warehouse {
-  A
-  B
-}
-
-enum CoilDiameter {
-  cm20
-  cm40
-} 
-
-// --- MODELO PARA O PROCESSO DE FABRICAÇÃO (INDEPENDENTE) ---
+//  MODELO PARA O PROCESSO DE FABRICAÇÃO (INDEPENDENTE) 
 model ManufacturingProcess {
   id              String        @id @default(cuid())
   
   // Dados do processo
-  warehouse       Warehouse        // Armazem 'A' ou 'B'
-  coilDiameter    CoilDiameter          // Diâmetro da bobina '20' ou '40'
+  warehouse       String        // Armazem 'A' ou 'B'
+  coilDiameter    Int          // Diâmetro da bobina '20' ou '40'
   totalWireLength Int          // Comprimento total do fio. 
   // Controle de status e tempo
   status          ProcessStatus @default(STARTED)
   startTime       DateTime      @default(now())   // Hora de início, preenchida automaticamente
-  endTime         DateTime?     // Hora de finalização, opcional
+  endTime         DateTime?     // Hora de finalização
 
   @@map("manufacturing_processes")
 }
