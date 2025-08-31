@@ -34,7 +34,7 @@ model User {
   @@map("users")
 }
 
-//  MODELO PARA O PROCESSO DE FABRICAÇÃO (INDEPENDENTE) 
+//  MODELO PARA O PROCESSO DE FABRICAÇÃO 
 model ManufacturingProcess {
   id              String        @id @default(cuid())
   

@@ -1,6 +1,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /node_modules
 =======
 >>>>>>> Stashed changes
@@ -30,5 +31,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 /back end/node_modules

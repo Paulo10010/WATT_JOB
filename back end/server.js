@@ -30,7 +30,7 @@ app.use('/process', processRouter);
 import reportRoutes from './routes/reportRoutes.js';
 app.use('/reports', reportRoutes);
 
-const PORT = 3000;
+const PORT = 4000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando com sucesso em http://localhost:${PORT}`);
 });
