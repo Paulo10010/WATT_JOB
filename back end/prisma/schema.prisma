@@ -1,0 +1,52 @@
+// Define o provedor do banco de dados e a URL de conexão
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Define o gerador do Prisma Client
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Enum para os papéis (funções) dos usuários
+enum Role {
+  OPERATOR
+  SUPERVISOR
+}
+
+// Enum para os status do processo de fabricação
+enum ProcessStatus {
+  STARTED
+  IN_PROGRESS
+  FINISHED
+  CANCELED
+}
+
+//  MODELO 'User' 
+model User {
+  id        String   @id @default(cuid())
+  cpf       String   @unique
+  name      String
+  password  String
+  role      Role     @default(OPERATOR)
+  
+  @@map("users")
+}
+
+//  MODELO PARA O PROCESSO DE FABRICAÇÃO 
+model ManufacturingProcess {
+  id              String        @id @default(cuid())
+  
+  // Dados do processo
+  warehouse       String        // Armazem 'A' ou 'B'
+  coilDiameter    Int          // Diâmetro da bobina '20' ou '40'
+  totalWireLength Int          // Comprimento total do fio. 
+  // Controle de status e tempo
+  status          ProcessStatus @default(STARTED)
+  startTime       DateTime      @default(now())   // Hora de início, preenchida automaticamente
+  endTime         DateTime?     // Hora de finalização
+
+  @@map("manufacturing_processes")
+}
+
